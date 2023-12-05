@@ -1,3 +1,3 @@
 # Pinterest
 
--> A pinterest clone 
+-> A pinterest clone using MERN STACK 
