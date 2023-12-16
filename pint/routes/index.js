@@ -17,8 +17,9 @@ router.get('/register', function(req, res, next) {
 });
 
 
-router.get('/profile', isLoggedIn ,function(req, res, next) {
-  res.render('profile');
+router.get('/profile', isLoggedIn , async function(req, res, next) {
+  const user = await userModel.findOne({username: req.session.passport.user});
+  res.render('profile', {user});
 });
 
 
