@@ -9,17 +9,17 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index', {nav:true});
 });
 
 router.get('/register', function(req, res, next) {
-  res.render('register');
+  res.render('register', {nav: true});
 });
 
 
 router.get('/profile', isLoggedIn , async function(req, res, next) {
   const user = await userModel.findOne({username: req.session.passport.user});
-  res.render('profile', {user});
+  res.render('profile', {user , nav:false});
 });
 
 
@@ -55,7 +55,7 @@ router.post('/login', passport.authenticate("local", {
 });
 
 
-router.get('/login', function(req, res, next){
+router.get('/logout', function(req, res, next){
   req.logout(function(err) {
     if (err) { return next(err); }
     res.redirect('/');
