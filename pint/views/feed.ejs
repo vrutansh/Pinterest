@@ -6,7 +6,8 @@
                 <div class="w-full h-40 bg-sky-200 rounded-lg overflow-hidden">
                     <img class="w-full h-full" src="/images/uploads/<%= elem.image %>" alt="">
                 </div>
-                <h5 class="mt-2 text-sm"><%= elem.title%></h5>
+                <h4 class="mt-2 text-sm"><%= elem.title%></h4>
+                <h5 class="text-xs opacity-80 text-white font-semibold">@<%= elem.user.username %></h5>
             </div>
         <% }) %>
         
