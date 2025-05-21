@@ -15,4 +15,5 @@
 /logout
 
 /edit
+
 /upload
